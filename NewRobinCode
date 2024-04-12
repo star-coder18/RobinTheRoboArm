@@ -8,7 +8,7 @@ Servo servo04;
 Servo servo05;
 Servo servo06;
 
-SoftwareSerial Bluetooth(3, 4); // Arduino(RX, TX) - HC-05 Bluetooth (TX, RX)
+SoftwareSerial Bluetooth(4, 2); // Arduino(RX, TX) - HC-05 Bluetooth (TX, RX)
 
 int servo1Pos, servo2Pos, servo3Pos, servo4Pos, servo5Pos, servo6Pos; // current position
 int servo1PPos, servo2PPos, servo3PPos, servo4PPos, servo5PPos, servo6PPos; // previous position
@@ -18,27 +18,27 @@ int index = 0;
 String dataIn = "";
 
 void setup() {
-  servo01.attach(5);
-  servo02.attach(6);
-  servo03.attach(7);
-  servo04.attach(8);
-  servo05.attach(9);
-  servo06.attach(10);
-  Bluetooth.begin(38400); // Default baud rate of the Bluetooth module
+  servo01.attach(3);
+  servo02.attach(5);
+  servo03.attach(6);
+  servo04.attach(9);
+  servo05.attach(10);
+  servo06.attach(11);
+  Bluetooth.begin(9600); // Default baud rate of the Bluetooth module
   Bluetooth.setTimeout(1);
   delay(20);
   // Robot arm initial position
   servo1PPos = 90;
   servo01.write(servo1PPos);
-  servo2PPos = 150;
+  servo2PPos = 90;
   servo02.write(servo2PPos);
-  servo3PPos = 35;
+  servo3PPos = 90;
   servo03.write(servo3PPos);
-  servo4PPos = 140;
+  servo4PPos = 90;
   servo04.write(servo4PPos);
-  servo5PPos = 85;
+  servo5PPos = 90;
   servo05.write(servo5PPos);
-  servo6PPos = 80;
+  servo6PPos = 90;
   servo06.write(servo6PPos);
 }
 
